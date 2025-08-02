@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interstellar Astronomy Challenge 2024</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Orbitron:wght@500&display=swap">
+    <style>
+        :root {
+            --space-dark: #0a0e17;
+            --space-blue: #1a2a4a;
+            --neon-blue: #4fc3f7;
+            --star-yellow: #ffeb3b;
+            --text-light: #e0e0e0;
+            --text-lighter: #ffffff;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--space-dark);
+            margin: 0;
+            padding: 0;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--space-blue), #0d1b36);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid rgba(79, 195, 247, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+        }
+        
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            margin: 0;
+            color: var(--text-lighter);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            margin-top: 40px;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--neon-blue);
+        }
+        
+        section {
+            background-color: rgba(26, 42, 74, 0.4);
+            border: 1px solid rgba(79, 195, 247, 0.1);
+            border-radius: 6px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        li::before {
+            content: "•";
+            color: var(--neon-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .register-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--neon-blue), #1976d2);
+            color: var(--space-dark);
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(79, 195, 247, 0.4);
+        }
+        
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 195, 247, 0.6);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            background: linear-gradient(transparent, rgba(10, 14, 23, 0.8));
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(79, 195, 247, 0.5), transparent);
+        }
+        
+        .footer-text {
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+        
+        .highlight {
+            color: var(--star-yellow);
+            font-weight: 600;
+        }
+        
+        a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--star-yellow);
+            text-decoration: underline;
+        }
+        
+        .date-info {
+            display: flex;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .date-box {
+            background-color: rgba(10, 14, 23, 0.6);
+            border: 1px solid rgba(79, 195, 247, 0.2);
+            border-radius: 4px;
+            padding: 15px;
+            flex: 1;
+        }
+        
+        .date-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .date-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-lighter);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .date-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Interstellar Astronomy Challenge</h1>
+            <p class="subtitle">The Premier Global Astronomy Competition for 2024</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About the Competition</h2>
+            <p>The <span class="highlight">Interstellar Astronomy Challenge 2024</span> is the most prestigious astronomy competition for students and amateur astronomers worldwide. Organized by the International Astronomical Union, this event brings together the brightest minds to explore, discover, and compete in various cosmic challenges.</p>
+            <p>Participants will demonstrate their expertise through theoretical examinations, practical observation tests, and cutting-edge astrophysics problem-solving. The competition culminates in a grand finale at the European Space Astronomy Centre.</p>
+        </section>
+
+        <section id="rules">
+            <h2>Competition Rules</h2>
+            <ul>
+                <li><strong>Eligibility</strong>: Open to participants aged 14-25 worldwide. Both individual and team entries (max 3 members) are accepted.</li>
+                <li><strong>Structure</strong>:
+                    <ul>
+                        <li><strong>Qualifying Round</strong>: Online theoretical examination (90 minutes)</li>
+                        <li><strong>Regional Finals</strong>: Practical tests at designated observatories</li>
+                        <li><strong>Global Championship</strong>: Week-long competition featuring observation, data analysis, and research challenges</li>
+                    </ul>
+                </li>
+                <li><strong>Evaluation</strong>: Judged by a panel of professional astronomers based on accuracy, methodology, and innovation.</li>
+                <li><strong>Code of Conduct</strong>: Strict academic integrity policies enforced. All work must be original.</li>
+                <li><strong>Equipment</strong>: Basic observational tools provided. Personal equipment may be used within specified guidelines.</li>
+            </ul>
+        </section>
+
+        <section id="topics">
+            <h2>Competition Topics</h2>
+            <p>The 2024 challenge will focus on these key astronomical domains:</p>
+            <ul>
+                <li><strong>Planetary Science</strong>: Exoplanet detection methods, planetary atmospheres, and comparative planetology</li>
+                <li><strong>Stellar Astrophysics</strong>: Stellar evolution models, nucleosynthesis, and variable star analysis</li>
+                <li><strong>Galactic Dynamics</strong>: Dark matter distribution, galactic rotation curves, and structure formation</li>
+                <li><strong>Observational Techniques</strong>: Photometry, spectroscopy, and radio astronomy data interpretation</li>
+                <li><strong>Cosmology</strong>: Cosmic microwave background analysis, large-scale structure, and inflation theory</li>
+                <li><strong>Space Mission Design</strong>: Orbital mechanics, spacecraft instrumentation, and mission planning</li>
+            </ul>
+        </section>
+
+        <section id="registration">
+            <h2>Registration</h2>
+            <p>Begin your journey to the stars today:</p>
+            
+            <div class="date-info">
+                <div class="date-box">
+                    <div class="date-label">Registration Deadline</div>
+                    <div class="date-value">October 15, 2024</div>
+                </div>
+                <div class="date-box">
+                    <div class="date-label">Final Competition</div>
+                    <div class="date-value">December 5-12, 2024</div>
+                </div>
+            </div>
+
+            <h3>Registration Process</h3>
+            <ol>
+                <li>Complete the online registration form with academic details</li>
+                <li>Submit qualifying exam scores or astronomy portfolio</li>
+                <li>Pay the registration fee (waivers available)</li>
+                <li>Receive official confirmation and preparation materials</li>
+            </ol>
+
+            <h3>Participation Fees</h3>
+            <ul>
+                <li>Individual Competitor: $150 (early bird $120)</li>
+                <li>Team Registration: $400 (early bird $350)</li>
+                <li>Developing Nation Scholarship: Available upon application</li>
+            </ul>
+
+            <a href="#register" class="register-btn">Begin Registration</a>
+            
+            <p><strong>Contact</strong>: For inquiries, contact <a href="mailto:registrar@interstellarastronomy.org">registrar@interstellarastronomy.org</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">"The cosmos is within us. We are made of star-stuff." <span class="highlight">— Carl Sagan</span></p>
+        </div>
+    </footer>
+</body>
+</html>

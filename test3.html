@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Olympiad - Astronomy Competition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue-bg: #0d1117;
+            --dark-gray-card: #161b22;
+            --light-text: #c9d1d9;
+            --primary-accent: #58a6ff;
+            --secondary-accent: #a371f7;
+            --border-color: #30363d;
+            --shadow-color: rgba(2, 6, 23, 0.5);
+        }
+        body {
+            background-color: var(--dark-blue-bg);
+            color: var(--light-text);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .section-card {
+            background-color: var(--dark-gray-card);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            min-height: 50vh;
+        }
+        .button-primary {
+            background-color: var(--primary-accent);
+            color: #0d1117;
+            transition: all 0.3s ease;
+        }
+        .button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(88, 166, 255, 0.4);
+        }
+        .input-field {
+            background-color: #0d1117;
+            border-color: var(--border-color);
+            color: var(--light-text);
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center flex flex-col justify-center items-center py-20 px-4 rounded-b-3xl">
+        <div class="flex items-center justify-center mb-4">
+            <!-- Star Icon SVG from Lucide-react -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star text-secondary-accent animate-pulse-slow">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold ml-4">Stellar Olympiad</h1>
+        </div>
+        <p class="text-lg sm:text-xl text-light-text max-w-2xl mx-auto mt-4 mb-8 opacity-90">
+            A nationwide astronomy competition for students and enthusiasts to explore the wonders of the cosmos.
+        </p>
+        <button id="register-btn" class="button-primary font-semibold py-3 px-8 rounded-full text-lg shadow-lg">
+            Register Now
+        </button>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+
+        <!-- About Section -->
+        <section id="about" class="mb-20">
+            <div class="section-card p-8 sm:p-12 rounded-3xl">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-primary-accent">About the Competition</h2>
+                <p class="text-base sm:text-lg leading-relaxed">
+                    The Stellar Olympiad is an annual competition designed to test knowledge and passion for astronomy. Our mission is to inspire the next generation of astronomers, astrophysicists, and space explorers. Participants will engage in challenging theoretical questions, practical observation tasks, and a collaborative project component. This competition is open to high school students and university undergraduates who have a keen interest in the universe.
+                </p>
+            </div>
+        </section>
+
+        <!-- Rules Section -->
+        <section id="rules" class="mb-20">
+            <div class="section-card p-8 sm:p-12 rounded-3xl">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-secondary-accent">Rules and Regulations</h2>
+                <ul class="list-disc list-inside space-y-4 text-base sm:text-lg">
+                    <li>Registration is mandatory and must be completed by the deadline.</li>
+                    <li>The competition will consist of three rounds: a preliminary online quiz, a practical observation round, and a final presentation.</li>
+                    <li>All participants must adhere to a code of conduct promoting fair play and respect.</li>
+                    <li>Plagiarism and any form of cheating will result in immediate disqualification.</li>
+                    <li>Individual and team participation options are available.</li>
+                    <li>Winners will be selected based on a cumulative score across all rounds.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Topics Section -->
+        <section id="topics" class="mb-20">
+            <div class="section-card p-8 sm:p-12 rounded-3xl">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-primary-accent">Competition Topics</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">&#x1F30C;</span> <!-- Saturn emoji -->
+                        <div class="flex-grow">
+                            <h3 class="font-semibold text-xl mb-1">Planetary Science</h3>
+                            <p class="text-sm opacity-80">Formation, characteristics, and moons of planets in our solar system.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">&#x1F308;</span> <!-- Rainbow emoji -->
+                        <div class="flex-grow">
+                            <h3 class="font-semibold text-xl mb-1">Stellar Astrophysics</h3>
+                            <p class="text-sm opacity-80">Life cycles of stars, stellar evolution, and stellar spectra.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">&#x1F30C;</span> <!-- Comet emoji -->
+                        <div class="flex-grow">
+                            <h3 class="font-semibold text-xl mb-1">Cosmology</h3>
+                            <p class="text-sm opacity-80">Big Bang theory, dark matter, dark energy, and the fate of the universe.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">&#x1F310;</span> <!-- Globe emoji -->
+                        <div class="flex-grow">
+                            <h3 class="font-semibold text-xl mb-1">Observational Astronomy</h3>
+                            <p class="text-sm opacity-80">Using telescopes, astrophotography, and celestial navigation.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">&#x1F31F;</span> <!-- Star emoji -->
+                        <div class="flex-grow">
+                            <h3 class="font-semibold text-xl mb-1">Galaxies and Nebulae</h3>
+                            <p class="text-sm opacity-80">Structure and classification of galaxies, nebulae, and black holes.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4">&#x2604;&#xFE0F;</span> <!-- Comet emoji -->
+                        <div class="flex-grow">
+                            <h3 class="font-semibold text-xl mb-1">Exoplanets</h3>
+                            <p class="text-sm opacity-80">Detection methods, habitability, and characteristics of planets outside our solar system.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="registration">
+            <div class="section-card p-8 sm:p-12 rounded-3xl">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-secondary-accent">Registration</h2>
+                <form id="registration-form" class="space-y-6">
+                    <div>
+                        <label for="full-name" class="block text-sm font-medium mb-2">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" class="input-field w-full px-4 py-2 rounded-lg" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="input-field w-full px-4 py-2 rounded-lg" required>
+                    </div>
+                    <div>
+                        <label for="organization" class="block text-sm font-medium mb-2">School / University</label>
+                        <input type="text" id="organization" name="organization" class="input-field w-full px-4 py-2 rounded-lg" required>
+                    </div>
+                    <div>
+                        <label for="experience" class="block text-sm font-medium mb-2">Tell us about your astronomy experience</label>
+                        <textarea id="experience" name="experience" rows="4" class="input-field w-full px-4 py-2 rounded-lg"></textarea>
+                    </div>
+                    <button type="submit" class="button-primary w-full py-3 px-4 rounded-lg font-semibold text-lg">
+                        Submit Registration
+                    </button>
+                    <div id="loading-indicator" class="hidden text-center mt-4">
+                        <p class="text-sm text-gray-500">Submitting your registration...</p>
+                    </div>
+                    <div id="success-message" class="hidden text-center mt-4 p-4 rounded-lg bg-green-900 text-green-200">
+                        Registration submitted successfully! We will contact you via email shortly.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-sm opacity-50 border-t border-border-color mt-20">
+        <p>&copy; 2024 Stellar Olympiad. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the registration button and form elements
+        const registerBtn = document.getElementById('register-btn');
+        const registrationForm = document.getElementById('registration-form');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const successMessage = document.getElementById('success-message');
+
+        // Smooth scroll to the registration section when the hero button is clicked
+        registerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const registrationSection = document.getElementById('registration');
+            registrationSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Handle form submission
+        registrationForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent the default form submission
+            
+            // Show loading indicator
+            loadingIndicator.classList.remove('hidden');
+            registrationForm.querySelector('button').disabled = true;
+
+            // Simulate a network request with a delay
+            setTimeout(() => {
+                // Hide loading indicator
+                loadingIndicator.classList.add('hidden');
+                
+                // Show success message
+                successMessage.classList.remove('hidden');
+
+                // Clear the form fields
+                registrationForm.reset();
+
+                // Re-enable the submit button
+                registrationForm.querySelector('button').disabled = false;
+
+                // Scroll to the success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 2000); // 2 second delay
+        });
+    </script>
+
+</body>
+</html>
